@@ -1,4 +1,4 @@
-package piece.of.lazy.library.ui;
+package piece.of.lazy.ui;
 
 import org.junit.Test;
 

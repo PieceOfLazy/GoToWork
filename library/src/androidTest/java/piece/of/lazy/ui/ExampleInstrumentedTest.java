@@ -1,4 +1,4 @@
-package piece.of.lazy.library.ui;
+package piece.of.lazy.ui;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("piece.of.lazy.library.ui.test", appContext.getPackageName());
+        assertEquals("piece.of.lazy.ui.test", appContext.getPackageName());
     }
 }
