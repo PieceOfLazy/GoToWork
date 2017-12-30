@@ -1,12 +1,14 @@
 package piece.of.lazy.gotowork.base
 
-import android.app.Application
+import dagger.android.AndroidInjector
+import dagger.android.DaggerApplication
+import piece.of.lazy.gotowork.di.DaggerAppComponent
 import piece.of.lazy.ui.util.Log
 
 /**
- * Created by zpdl
+ * @author piece.of.lazy
  */
-class BaseApplication : Application() {
+class BaseApplication : DaggerApplication() {
 
     override fun onCreate() {
         super.onCreate()
@@ -14,12 +16,18 @@ class BaseApplication : Application() {
         Log.level = Log.LEVEL.DEBUG
         Log.prefix = "Lazy:"
 
-        Log.d("GoToWork", "Application : onCreate")
+        Log.v("GoToWork", "Application : onCreate")
     }
 
     override fun onTerminate() {
         super.onTerminate()
 
-        Log.d("GoToWork", "Application : onTerminate")
+        Log.v("GoToWork", "Application : onTerminate")
+    }
+
+    override fun applicationInjector(): AndroidInjector<out DaggerApplication> {
+        val appComponent = DaggerAppComponent.builder().application(this).build()
+        appComponent.inject(this)
+        return appComponent
     }
 }

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="piece.of.lazy.gotowork.SplashActivity">
+    tools:context="piece.of.lazy.gotowork.app.SplashActivity">
 
     <TextView
         android:layout_width="wrap_content"
