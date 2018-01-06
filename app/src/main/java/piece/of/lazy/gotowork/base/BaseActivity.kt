@@ -1,18 +1,13 @@
 package piece.of.lazy.gotowork.base
 
-import android.support.v7.app.AppCompatActivity
+import dagger.android.support.DaggerAppCompatActivity
 import piece.of.lazy.ui.util.Log
 
 /**
  * @author piece.of.lazy
  */
-abstract class BaseActivity : AppCompatActivity() {
+abstract class BaseActivity : DaggerAppCompatActivity() {
     protected val log by lazy {
-        val simpleName = this::class.simpleName
-        if(simpleName != null) {
-            Log(simpleName)
-        } else {
-            Log("")
-        }
+        Log(this::class.simpleName)
     }
 }

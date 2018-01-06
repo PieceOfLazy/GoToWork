@@ -3,7 +3,7 @@ package piece.of.lazy.ui.util
 /**
  * Created by zpdl
  */
-open class Log constructor(private val tag: String)   {
+open class Log constructor(private val tag: String?)   {
 
     enum class LEVEL {
         NOT, VERBOSE, DEBUG, INFO, WARN, ERROR
@@ -41,26 +41,26 @@ open class Log constructor(private val tag: String)   {
 
     fun v(msg: String) {
         if (LEVEL.VERBOSE.ordinal >= level.ordinal)
-            Log.v(tag, msg)
+            Log.v("$tag", msg)
     }
 
     fun d(msg: String) {
         if (LEVEL.DEBUG.ordinal >= level.ordinal)
-            Log.d(tag, msg)
+            Log.d("$tag", msg)
     }
 
     fun i(msg: String) {
         if (LEVEL.INFO.ordinal >= level.ordinal)
-            Log.i(tag, msg)
+            Log.i("$tag", msg)
     }
 
     fun w(msg: String) {
         if (LEVEL.WARN.ordinal >= level.ordinal)
-            Log.w(tag, msg)
+            Log.w("$tag", msg)
     }
 
     fun e(msg: String) {
         if (LEVEL.ERROR.ordinal >= level.ordinal)
-            Log.e(tag, msg)
+            Log.e("$tag", msg)
     }
 }

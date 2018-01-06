@@ -7,6 +7,11 @@ import piece.of.lazy.gotowork.base.mvp.BaseView
  * @author piece.of.lazy
  */
 interface SplashContract {
+
+    interface ViewListener {
+        fun onInjected()
+    }
+
     interface View : BaseView<Presenter> {
 
     }

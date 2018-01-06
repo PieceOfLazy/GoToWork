@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Text size defines -->
+    <dimen name="ts_10">8.000dp</dimen>
+    <dimen name="ts_20">10.000dp</dimen>
+    <dimen name="ts_30">12.000dp</dimen>
+    <dimen name="ts_40">16.000dp</dimen>
+    <dimen name="ts_50">18.000dp</dimen>
+    <dimen name="ts_big">40.000dp</dimen>
+</resources>

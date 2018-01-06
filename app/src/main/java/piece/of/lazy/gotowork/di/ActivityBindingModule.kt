@@ -1,6 +1,9 @@
 package piece.of.lazy.gotowork.di
 
 import dagger.Module
+import dagger.android.ContributesAndroidInjector
+import piece.of.lazy.gotowork.app.SplashActivity
+import piece.of.lazy.gotowork.app.SplashModule
 
 /**
  * We want Dagger.Android to create a Subcomponent which has a parent Component of whichever module ActivityBindingModule is on,
@@ -11,5 +14,7 @@ import dagger.Module
  */
 @Module
 abstract class ActivityBindingModule {
-
+    @ActivityScoped
+    @ContributesAndroidInjector(modules = [(SplashModule::class)])
+    internal abstract fun splashActivity(): SplashActivity
 }

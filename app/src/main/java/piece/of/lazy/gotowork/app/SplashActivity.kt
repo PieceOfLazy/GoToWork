@@ -8,12 +8,12 @@ import javax.inject.Inject
 /**
  * @author piece.of.lazy
  */
-class SplashActivity : BaseActivity() {
+class SplashActivity : BaseActivity(), SplashContract.ViewListener {
 
     @Inject
-    private lateinit var presenter: SplashPresenter
+    lateinit var presenter: SplashContract.Presenter
     @Inject
-    private lateinit var fragment: SplashFragment
+    lateinit var fragment: SplashFragment
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,4 +33,9 @@ class SplashActivity : BaseActivity() {
             }
         }
     }
+
+    override fun onInjected() {
+        log.i("onInjected "+this)
+    }
+
 }

@@ -1,19 +1,29 @@
 package piece.of.lazy.gotowork.app
 
+import piece.of.lazy.gotowork.common.Log
+import javax.inject.Inject
+
 /**
  * @author piece.of.lazy
  */
-internal class SplashPresenter : SplashContract.Presenter {
+class SplashPresenter @Inject constructor(val log: Log) : SplashContract.Presenter {
+
+    private var view : SplashContract.View? = null
+
     override fun onAttach(view: SplashContract.View) {
-//        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        this.view = view
+
+        log.d("onAttach")
     }
 
     override fun onDetach() {
-//        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        this.view = null
+
+        log.d("onDetach")
     }
 
     override fun onLaunch() {
-//        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+
     }
 
 }

@@ -6,8 +6,8 @@ import dagger.Component
 import dagger.android.AndroidInjector
 import dagger.android.DaggerApplication
 import dagger.android.support.AndroidSupportInjectionModule
-import piece.of.lazy.gotowork.app.SplashModule
 import piece.of.lazy.gotowork.base.BaseApplication
+import javax.inject.Singleton
 
 /**
  * This is a Dagger component. Refer to {@link BaseApplication} for the list of Dagger components
@@ -20,9 +20,10 @@ import piece.of.lazy.gotowork.base.BaseApplication
  * // is the module from Dagger.Android that helps with the generation
  * // and location of subcomponents.
  */
+@Singleton
 @Component(modules = [
     (ApplicationModule::class),
-    (SplashModule::class),
+    (ActivityBindingModule::class),
     (AndroidSupportInjectionModule::class)
 ])
 interface AppComponent : AndroidInjector<DaggerApplication> {
