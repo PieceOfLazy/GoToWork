@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/colorBg_20_A_50">
 
     <TextView
-        android:id="@+id/splash_piece_animation_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:textSize="40dp"
-        android:textColor="#EEEEEE"
+        android:textSize="@dimen/ts_big"
+        android:textColor="@color/colorTc_20"
         android:textStyle="bold"
-        android:text="Piece of UI"
+        android:text="Go to work"
         />
 
 </FrameLayout>

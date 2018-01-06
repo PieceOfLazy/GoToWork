@@ -10,6 +10,10 @@ class SplashPresenter @Inject constructor(val log: Log) : SplashContract.Present
 
     private var view : SplashContract.View? = null
 
+    init {
+        log.d("init")
+    }
+
     override fun onAttach(view: SplashContract.View) {
         this.view = view
 
