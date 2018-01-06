@@ -8,12 +8,7 @@ import javax.inject.Inject
 /**
  * @author piece.of.lazy
  */
-class SplashActivity : BaseActivity(), SplashContract.ViewListener {
-
-    @Inject
-    lateinit var presenter: SplashContract.Presenter
-    @Inject
-    lateinit var fragment: SplashFragment
+class SplashActivity : BaseActivity<SplashFragment, SplashContract.Presenter>(), SplashContract.ViewListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,17 +16,17 @@ class SplashActivity : BaseActivity(), SplashContract.ViewListener {
 
         log.i("onCreate")
 
-        fragmentManager?.let {
-            var fragment = it.findFragmentByTag(SplashFragment::class.simpleName)
-            if(fragment == null) {
-                val transaction = it.beginTransaction()
-                if(transaction != null) {
-                    val tag = SplashFragment::class.simpleName
-                    fragment = this@SplashActivity.fragment
-                    transaction.replace(R.id.activity_base_fragment, fragment, tag).commit()
-                }
-            }
-        }
+//        fragmentManager?.let {
+//            var fragment = it.findFragmentByTag(SplashFragment::class.simpleName)
+//            if(fragment == null) {
+//                val transaction = it.beginTransaction()
+//                if(transaction != null) {
+//                    val tag = SplashFragment::class.simpleName
+//                    fragment = this@SplashActivity.fragment
+//                    transaction.replace(R.id.activity_base_fragment, fragment, tag).commit()
+//                }
+//            }
+//        }
     }
 
     override fun onInjected() {

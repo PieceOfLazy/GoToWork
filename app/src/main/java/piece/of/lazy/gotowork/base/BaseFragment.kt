@@ -1,10 +1,6 @@
 package piece.of.lazy.gotowork.base
 
 import android.content.Context
-import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import dagger.android.DaggerFragment
 import piece.of.lazy.gotowork.base.mvp.BasePresenter
 import piece.of.lazy.gotowork.base.mvp.BaseView
@@ -18,13 +14,17 @@ import javax.inject.Inject
 @ActivityScoped
 abstract class BaseFragment<V: BaseView<P>, P: BasePresenter<V>, L: Any> : DaggerFragment(), BaseView<P> {
 
-    @Inject
     protected lateinit var presenter: P
+
     @Inject
     protected lateinit var listener: L
 
     protected val log by lazy {
         Log(this::class.simpleName)
+    }
+
+    override fun setMVPPresenter(present: P) {
+        this.presenter = present
     }
 
     override fun onAttach(context: Context?) {

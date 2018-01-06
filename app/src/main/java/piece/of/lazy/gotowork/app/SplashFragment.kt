@@ -19,6 +19,10 @@ class SplashFragment @Inject constructor() : BaseFragment<SplashContract.View, S
         return this
     }
 
+    override fun setMVPPresenter(present: SplashContract.Presenter) {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View {
         if(view == null) {
             inflater?.let {
