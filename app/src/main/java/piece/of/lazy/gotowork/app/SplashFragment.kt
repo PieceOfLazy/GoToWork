@@ -15,12 +15,11 @@ import javax.inject.Inject
 @ActivityScoped
 class SplashFragment @Inject constructor() : BaseFragment<SplashContract.View, SplashContract.Presenter, SplashContract.ViewListener>(), SplashContract.View  {
 
+    init {
+        log.i("SplashFragment init")
+    }
     override fun onBindPresenterView(): SplashContract.View {
         return this
-    }
-
-    override fun setMVPPresenter(present: SplashContract.Presenter) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View {

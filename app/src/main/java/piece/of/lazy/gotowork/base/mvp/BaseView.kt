@@ -5,5 +5,5 @@ package piece.of.lazy.gotowork.base.mvp
  */
 interface BaseView<in P> {
 
-    fun setMVPPresenter(present: P)
+
 }
