@@ -4,12 +4,11 @@ import android.content.res.Configuration
 import android.os.Bundle
 import piece.of.lazy.gotowork.R
 import piece.of.lazy.gotowork.base.BaseActivity
-import javax.inject.Inject
 
 /**
  * @author piece.of.lazy
  */
-class SplashActivity : BaseActivity<SplashFragment, SplashContract.Presenter>(), SplashContract.ViewListener {
+class SplashActivity : BaseActivity<SplashFragment, SplashContract.Presenter>(), SplashContract.ActivityListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,17 +27,15 @@ class SplashActivity : BaseActivity<SplashFragment, SplashContract.Presenter>(),
                 }
             }
         }
+
+
     }
 
     override fun onConfigurationChanged(newConfig: Configuration?) {
         super.onConfigurationChanged(newConfig)
 
-        fragmentManager?.let {
-            val fragment = it.findFragmentByTag(SplashFragment::class.simpleName)
-            if (fragment != null) {
-                val transaction = it.beginTransaction()
-                transaction?.detach(fragment)?.attach(fragment)?.commit()
-            }
+        SplashFragment::class.simpleName?.let {
+            fragmentRefresh(it)
         }
     }
 

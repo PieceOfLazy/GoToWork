@@ -12,7 +12,7 @@ import javax.inject.Inject
  * @author piece.of.lazy
  */
 @ActivityScoped
-abstract class BaseFragment<V: BaseView<P>, P: BasePresenter<V>, L: Any> : DaggerFragment(), BaseView<P> {
+abstract class BaseFragment<V: BaseView<P>, P: BasePresenter<V>, L: BaseActivityListener> : DaggerFragment(), BaseView<P> {
 
     @Inject
     protected lateinit var presenter: P
@@ -63,6 +63,14 @@ abstract class BaseFragment<V: BaseView<P>, P: BasePresenter<V>, L: Any> : Dagge
         super.onDetach()
 
         presenter.onDetach()
+    }
+
+    override fun onLoadingStart() {
+        listener.onLoadingStart()
+    }
+
+    override fun onLoadingEnd() {
+        listener.onLoadingEnd()
     }
 
     abstract fun onBindPresenterView(): V

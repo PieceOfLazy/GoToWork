@@ -1,10 +1,9 @@
-package piece.of.lazy.gotowork.base.mvp
+package piece.of.lazy.gotowork.base
 
 /**
  * @author piece.of.lazy
  */
-interface BaseView<in P> {
-
+interface BaseActivityListener {
     fun onLoadingStart()
 
     fun onLoadingEnd()

@@ -25,7 +25,7 @@ public abstract class SplashModule {
 
     @ActivityScoped
     @Binds
-    abstract SplashContract.ViewListener injectListner(SplashActivity listener);
+    abstract SplashContract.ActivityListener injectListner(SplashActivity listener);
 
     @Provides
     @ActivityScoped

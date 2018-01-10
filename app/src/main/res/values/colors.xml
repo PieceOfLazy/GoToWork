@@ -9,10 +9,13 @@
     <color name="colorBg_20">#000000</color>
     <color name="colorBg_20_A_80">#CC000000</color>
     <color name="colorBg_20_A_50">#7F000000</color>
+    <color name="colorBg_20_A_20">#33000000</color>
+    <color name="colorBg_20_A_10">#19000000</color>
 
     <color name="colorTc_10">#141921</color>
     <color name="colorTc_10_sub">#495B7A</color>
     <color name="colorTc_20">#FAFBFC</color>
+    <color name="colorTc_20_sub">#C8D0DE</color>
 
     <color name="colorPc_10">#0080C6</color>
 </resources>
