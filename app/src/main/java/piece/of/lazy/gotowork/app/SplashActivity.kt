@@ -2,13 +2,18 @@ package piece.of.lazy.gotowork.app
 
 import android.content.res.Configuration
 import android.os.Bundle
-import piece.of.lazy.gotowork.R
+import piece.of.lazy.gotowork.auth.LazyUser
 import piece.of.lazy.gotowork.base.BaseActivity
+import piece.of.lazy.gotowork.firebase.FbAuth
+import javax.inject.Inject
 
 /**
  * @author piece.of.lazy
  */
 class SplashActivity : BaseActivity<SplashFragment, SplashContract.Presenter>(), SplashContract.ActivityListener {
+
+    @Inject
+    lateinit var auth: FbAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,8 +32,6 @@ class SplashActivity : BaseActivity<SplashFragment, SplashContract.Presenter>(),
                 }
             }
         }
-
-
     }
 
     override fun onConfigurationChanged(newConfig: Configuration?) {
@@ -41,5 +44,9 @@ class SplashActivity : BaseActivity<SplashFragment, SplashContract.Presenter>(),
 
     override fun onInjected() {
         log.i("onInjected "+this)
+    }
+
+    fun getCurrentUser(): LazyUser? {
+        return auth.currentUser()
     }
 }

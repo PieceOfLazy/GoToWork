@@ -14,7 +14,7 @@ interface SplashContract {
     }
 
     interface View : BaseView<Presenter> {
-        fun onLaunched(model: Model, loading: Boolean)
+        fun onLaunched(model: Model, login: Boolean)
     }
 
     interface Presenter : BasePresenter<View> {

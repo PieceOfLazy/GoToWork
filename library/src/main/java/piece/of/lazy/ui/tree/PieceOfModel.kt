@@ -4,7 +4,7 @@ package piece.of.lazy.ui.tree
  * Created by zpdl
  */
 
-open interface PieceOfModel {
+interface PieceOfModel {
 
     interface OnModelInterface {
         fun onGetNodeInstance(): PieceOfNode<*>

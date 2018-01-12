@@ -1,5 +1,6 @@
 package piece.of.lazy.gotowork.app
 
+import piece.of.lazy.gotowork.auth.LazyUser
 import piece.of.lazy.gotowork.base.mvp.BasePresenterDefault
 import piece.of.lazy.gotowork.common.Log
 import javax.inject.Inject
@@ -7,17 +8,15 @@ import javax.inject.Inject
 /**
  * @author piece.of.lazy
  */
-class SplashPresenter @Inject constructor(val log: Log) : BasePresenterDefault<SplashContract.View>(), SplashContract.Presenter {
+class SplashPresenter @Inject constructor(private val log: Log, private val user: LazyUser?) : BasePresenterDefault<SplashContract.View>(), SplashContract.Presenter {
 
     private var animateAlpha = 0.0f
     private var loading = false
 
     override fun onLaunch() {
-        view?.let {
-            it.onLaunched(
-                    model = SplashContract.Model(animateAlpha),
-                    loading = loading)
-        }
+        view?.onLaunched(
+                model = SplashContract.Model(animateAlpha),
+                login = user != null)
     }
 
     override fun setAnimateAlpha(alpha: Float) {

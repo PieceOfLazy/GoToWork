@@ -103,6 +103,7 @@ class PieceOfNodeList(val node: PieceOfNode<*> ) {
 
         for(i: Int in 0 until nCnt) {
             val node = list.removeAt(nPos)
+            @Suppress("UNNECESSARY_SAFE_CALL")
             node?.let {
                 if(removedPos < 0) {
                     removedPos = it.vPos

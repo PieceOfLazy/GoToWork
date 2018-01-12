@@ -58,14 +58,9 @@ class SplashFragment @Inject constructor() : BaseFragment<SplashContract.View, S
         presenter.onLaunch()
     }
 
-    override fun onLaunched(model: SplashContract.Model, loading: Boolean) {
+    override fun onLaunched(model: SplashContract.Model, login: Boolean) {
         log.d("onLaunched")
         animationSplash.doBindItem(context, model.animateAlpha)
-        if(loading) {
-            onLoadingStart()
-        } else {
-            onLoadingEnd()
-        }
     }
 
     inner class AnimationSplash : PieceOfView<Float>() {
@@ -98,8 +93,10 @@ class SplashFragment @Inject constructor() : BaseFragment<SplashContract.View, S
                                 presenter.setAnimateEnd()
                             }
                         })
-                        .setUpdateListener { animation ->
-                            presenter.setAnimateAlpha(it.alpha)
+                        .setUpdateListener {
+                            mView?.let {
+                                presenter.setAnimateAlpha(it.alpha)
+                            }
                         }
                         .start()
             }
