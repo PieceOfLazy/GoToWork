@@ -6,7 +6,6 @@ import dagger.Component
 import dagger.android.AndroidInjector
 import dagger.android.DaggerApplication
 import dagger.android.support.AndroidSupportInjectionModule
-import piece.of.lazy.gotowork.auth.LazyAuth
 import piece.of.lazy.gotowork.base.BaseApplication
 import javax.inject.Singleton
 

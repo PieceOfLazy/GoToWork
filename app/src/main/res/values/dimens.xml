@@ -7,4 +7,8 @@
     <dimen name="ts_40">16.000dp</dimen>
     <dimen name="ts_50">18.000dp</dimen>
     <dimen name="ts_big">40.000dp</dimen>
+
+    <dimen name="margin_default">8dp</dimen>
+    <dimen name="margin_default_x">16dp</dimen>
+    <dimen name="margin_default_xx">24dp</dimen>
 </resources>

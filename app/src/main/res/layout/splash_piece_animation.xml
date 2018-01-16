@@ -13,7 +13,7 @@
         android:textSize="@dimen/ts_big"
         android:textColor="@color/colorTc_20"
         android:textStyle="bold"
-        android:text="Go to work"
+        android:text=""
         app:layout_constraintVertical_bias="0.25"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -43,45 +43,50 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:background="@color/colorBg_10"
+        android:gravity="center"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/splash_piece_animation_title"
         app:layout_constraintBottom_toTopOf="@id/splash_piece_animation_subject">
 
-
-        <android.support.v7.widget.CardView
-            android:layout_width="match_parent"
+        <piece.of.lazy.ui.widget.LazyCardImageTextView
+            android:id="@+id/splash_piece_animation_login_google"
+            android:layout_width="240dp"
             android:layout_height="46dp"
-            app:cardBackgroundColor="@color/colorBg_11"
-            app:cardCornerRadius="1dp"
-            app:cardElevation="1dp">
+            app:cardBackgroundColor="@color/colorBg_10"
+            app:cardCornerRadius="2dp"
+            app:cardElevation="4dp"
+            app:contentPaddingLeft="16dp"
+            app:contentPaddingRight="16dp"
+            app:orientation="horizontal"
+            app:layoutStyle="fill_text"
+            app:imageWidth="24dp"
+            app:imageHeight="24dp"
+            app:imageSpace="8dp"
+            app:imageSrc="@drawable/googleg_standard_color_18"
+            app:textSize="@dimen/ts_40"
+            app:textColor="@color/colorTc_10"
+            app:textStyle="normal"
+            app:text="Google login"
+            />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginEnd="16dp"
-                android:layout_marginStart="16dp"
-                android:gravity="center">
-
-                <ImageView
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:background="@color/colorPc_10"
-                    android:contentDescription="@null"
-                    android:scaleType="fitXY" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="Google login"
-                    android:textColor="@color/colorTc_10"
-                    android:textSize="@dimen/ts_40"
-                    android:textStyle="normal" />
-            </LinearLayout>
-        </android.support.v7.widget.CardView>
+        <piece.of.lazy.ui.widget.LazyCardImageTextView
+            android:id="@+id/splash_piece_animation_anonymous"
+            android:layout_width="240dp"
+            android:layout_height="46dp"
+            android:layout_marginTop="8dp"
+            app:cardBackgroundColor="@color/colorBg_10"
+            app:cardCornerRadius="2dp"
+            app:cardElevation="4dp"
+            app:contentPaddingLeft="16dp"
+            app:contentPaddingRight="16dp"
+            app:orientation="horizontal"
+            app:layoutStyle="fill_text"
+            app:textSize="@dimen/ts_40"
+            app:textColor="@color/colorTc_10"
+            app:textStyle="normal"
+            app:text="Google login"
+            />
 
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

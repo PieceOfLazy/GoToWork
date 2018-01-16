@@ -1,0 +1,26 @@
+<resources>
+
+    <declare-styleable name="LazyCardImageTextView">
+        <attr name="orientation" format="enum" >
+            <enum name="horizontal" value="0" />
+            <enum name="vertical" value="1" />
+        </attr>
+        <attr name="layoutStyle" format="enum" >
+            <enum name="pack" value="0" />
+            <enum name="fill_text" value="1" />
+        </attr>
+        <attr name="imageWidth" format="dimension" />
+        <attr name="imageHeight" format="dimension" />
+        <attr name="imageSrc" format="reference" />
+        <attr name="imageSpace" format="dimension" />
+        <attr name="textSize" format="dimension" />
+        <attr name="textColor" format="reference|color" />
+        <attr name="textStyle" format="enum">
+            <enum name="normal" value="0" />
+            <enum name="bold" value="1" />
+        </attr>
+        <attr name="text" format="reference|string" />
+
+    </declare-styleable>
+
+</resources>

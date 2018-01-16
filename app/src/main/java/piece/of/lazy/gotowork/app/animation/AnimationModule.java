@@ -1,4 +1,4 @@
-package piece.of.lazy.gotowork.app;
+package piece.of.lazy.gotowork.app.animation;
 
 import android.support.annotation.Nullable;
 
@@ -17,24 +17,24 @@ import piece.of.lazy.gotowork.firebase.FbAuth;
  * @author piece.of.lazy
  */
 @Module
-public abstract class SplashModule {
+public abstract class AnimationModule {
 
     @FragmentScoped
     @ContributesAndroidInjector
-    abstract SplashFragment injectFragment();
+    abstract AnimationFragment injectFragment();
 
     @ActivityScoped
     @Binds
-    abstract SplashContract.Presenter injectPresenter(SplashPresenter presenter);
+    abstract AnimationContract.Presenter injectPresenter(AnimationPresenter presenter);
 
     @ActivityScoped
     @Binds
-    abstract SplashContract.ActivityListener injectListner(SplashActivity listener);
+    abstract AnimationContract.ActivityListener injectListner(AnimationActivity listener);
 
     @Provides
     @ActivityScoped
     static Log providePresenterLog() {
-        return new LogDefault(SplashPresenter.class.getSimpleName());
+        return new LogDefault(AnimationContract.class.getSimpleName());
     }
 
     @Provides

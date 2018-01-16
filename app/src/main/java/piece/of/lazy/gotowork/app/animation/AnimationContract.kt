@@ -1,4 +1,4 @@
-package piece.of.lazy.gotowork.app
+package piece.of.lazy.gotowork.app.animation
 
 import piece.of.lazy.gotowork.base.BaseActivityListener
 import piece.of.lazy.gotowork.base.mvp.BasePresenter
@@ -7,11 +7,10 @@ import piece.of.lazy.gotowork.base.mvp.BaseView
 /**
  * @author piece.of.lazy
  */
-interface SplashContract {
+interface AnimationContract {
 
     interface ActivityListener : BaseActivityListener {
         fun onInjected()
-        fun onAnonymous()
     }
 
     interface View : BaseView<Presenter> {

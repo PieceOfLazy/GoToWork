@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import kotlinx.android.synthetic.main.splash_fragment.view.*
+import kotlinx.android.synthetic.main.splash_piece_animation.view.*
 import piece.of.lazy.gotowork.R
 import piece.of.lazy.gotowork.base.BaseFragment
 import piece.of.lazy.gotowork.di.ActivityScoped
@@ -68,6 +69,11 @@ class SplashFragment @Inject constructor() : BaseFragment<SplashContract.View, S
         override fun onLayout(): Int = R.layout.splash_piece_animation
 
         override fun onBindView(v: View) {
+            with(v) {
+                splash_piece_animation_anonymous?.setOnClickListener {
+                    listener.onAnonymous()
+                }
+            }
         }
 
         override fun onBindItem(c: Context, item: Float?) {
