@@ -49,28 +49,33 @@ class LazyCardImageTextView : CardView {
         val typedArray = context?.obtainStyledAttributes(attrs, R.styleable.LazyCardImageTextView)
         typedArray?.let {
             val orientation = it.getInt(R.styleable.LazyCardImageTextView_orientation, 0)
-            if(orientation == 1) {
-                containerView?.orientation = LinearLayout.VERTICAL
-            } else {
-                containerView?.orientation = LinearLayout.HORIZONTAL
+            val background = it.getDrawable(R.styleable.LazyCardImageTextView_backgroundCard)
+            val paddingStart = it.getDimensionPixelSize(R.styleable.LazyCardImageTextView_paddingStart, 0)
+            val paddingEnd = it.getDimensionPixelSize(R.styleable.LazyCardImageTextView_paddingEnd, 0)
+            val paddingTop = it.getDimensionPixelSize(R.styleable.LazyCardImageTextView_paddingTop, 0)
+            val paddingBottom = it.getDimensionPixelSize(R.styleable.LazyCardImageTextView_paddingBottom, 0)
+            containerView?.apply {
+                setOrientation(if(orientation == 1) LinearLayout.VERTICAL else LinearLayout.HORIZONTAL)
+                setBackground(background)
+                setPaddingRelative(paddingStart, paddingTop, paddingEnd, paddingBottom)
             }
 
             val imageWidth = it.getDimensionPixelSize(R.styleable.LazyCardImageTextView_imageWidth, ViewGroup.LayoutParams.WRAP_CONTENT)
             val imageHeight = it.getDimensionPixelSize(R.styleable.LazyCardImageTextView_imageHeight, ViewGroup.LayoutParams.WRAP_CONTENT)
-            val imageSpace = it.getDimensionPixelSize(R.styleable.LazyCardImageTextView_imageSpace, 0)
+            val imageSpace = it.getDimensionPixelSize(R.styleable.LazyCardImageTextView_paddingSpace, 0)
             val imageSrc = it.getDrawable(R.styleable.LazyCardImageTextView_imageSrc)
 
-            imageView?.let {
-                if(imageSrc != null) {
-                    it.visibility = View.VISIBLE
-                    (it.layoutParams as? LinearLayout.LayoutParams)?.apply {
+            imageView?.apply {
+                if(imageSrc != null && imageWidth != 0 && imageHeight != 0) {
+                    visibility = View.VISIBLE
+                    (layoutParams as? LinearLayout.LayoutParams)?.apply {
                         width = imageWidth
                         height = imageHeight
                         marginEnd = imageSpace
                     }
-                    it.setImageDrawable(imageSrc)
+                    setImageDrawable(imageSrc)
                 } else {
-                    it.visibility = View.GONE
+                    visibility = View.GONE
                 }
             }
 
@@ -80,30 +85,30 @@ class LazyCardImageTextView : CardView {
             val textStyle = it.getInt(R.styleable.LazyCardImageTextView_textStyle, 0)
             val text = it.getText(R.styleable.LazyCardImageTextView_text)
 
-            textView?.let {
+            textView?.apply {
                 if(style == 1) {
-                    (it.layoutParams as? LinearLayout.LayoutParams)?.apply {
+                    (layoutParams as? LinearLayout.LayoutParams)?.apply {
                         width = 0
                         height = ViewGroup.LayoutParams.WRAP_CONTENT
                         weight = 1f
                     }
                 } else {
-                    (it.layoutParams as? LinearLayout.LayoutParams)?.apply {
+                    (layoutParams as? LinearLayout.LayoutParams)?.apply {
                         width = ViewGroup.LayoutParams.WRAP_CONTENT
                         height = ViewGroup.LayoutParams.WRAP_CONTENT
                     }
                 }
 
-                it.setTextSize(TypedValue.COMPLEX_UNIT_PX, textSize.toFloat())
+                setTextSize(TypedValue.COMPLEX_UNIT_PX, textSize.toFloat())
                 if(textColor != null) {
-                    it.setTextColor(textColor)
+                    setTextColor(textColor)
                 }
                 if(textStyle == 1) {
-                    it.typeface = Typeface.DEFAULT_BOLD
+                    typeface = Typeface.DEFAULT_BOLD
                 } else {
-                    it.typeface = Typeface.DEFAULT
+                    typeface = Typeface.DEFAULT
                 }
-                it.text = text
+                setText(text)
             }
         }
         typedArray?.recycle()

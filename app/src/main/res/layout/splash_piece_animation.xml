@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorBg_20_A_50">
+    android:background="@color/color_100_A_50">
 
     <TextView
         android:id="@+id/splash_piece_animation_title"
@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:textSize="@dimen/ts_big"
-        android:textColor="@color/colorTc_20"
+        android:textColor="@color/color_10"
         android:textStyle="bold"
         android:text=""
         app:layout_constraintVertical_bias="0.25"
@@ -27,7 +27,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:textSize="@dimen/ts_40"
-        android:textColor="@color/colorTc_20_sub"
+        android:textColor="@color/color_40"
         android:textStyle="normal"
         android:text="Piece Of Lazy"
         app:layout_constraintVertical_bias="0.95"
@@ -53,21 +53,21 @@
             android:id="@+id/splash_piece_animation_login_google"
             android:layout_width="240dp"
             android:layout_height="46dp"
-            app:cardBackgroundColor="@color/colorBg_10"
+            app:cardBackgroundColor="@color/color_10"
             app:cardCornerRadius="2dp"
             app:cardElevation="4dp"
-            app:contentPaddingLeft="16dp"
-            app:contentPaddingRight="16dp"
+            app:backgroundCard="@drawable/ripple_b_10_f_60a80"
+            app:paddingStart="16dp"
+            app:paddingEnd="16dp"
             app:orientation="horizontal"
             app:layoutStyle="fill_text"
             app:imageWidth="24dp"
             app:imageHeight="24dp"
-            app:imageSpace="8dp"
             app:imageSrc="@drawable/googleg_standard_color_18"
-            app:textSize="@dimen/ts_40"
-            app:textColor="@color/colorTc_10"
+            app:textSize="@dimen/ts_30"
+            app:textColor="@color/text_login_color"
             app:textStyle="normal"
-            app:text="Google login"
+            app:text="@string/sign_in_with_google"
             />
 
         <piece.of.lazy.ui.widget.LazyCardImageTextView
@@ -75,19 +75,19 @@
             android:layout_width="240dp"
             android:layout_height="46dp"
             android:layout_marginTop="8dp"
-            app:cardBackgroundColor="@color/colorBg_10"
+            app:cardBackgroundColor="@color/color_10"
             app:cardCornerRadius="2dp"
             app:cardElevation="4dp"
-            app:contentPaddingLeft="16dp"
-            app:contentPaddingRight="16dp"
+            app:backgroundCard="@drawable/ripple_b_20_f_60a80"
             app:orientation="horizontal"
             app:layoutStyle="fill_text"
-            app:textSize="@dimen/ts_40"
-            app:textColor="@color/colorTc_10"
+            app:textSize="@dimen/ts_30"
+            app:textColor="@color/text_login_color"
             app:textStyle="normal"
-            app:text="Google login"
+            app:text="@string/sign_in_with_anonymous"
             />
 
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
+
 

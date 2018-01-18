@@ -20,7 +20,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".app.animation.AnimationActivity"
-            android:windowSoftInputMode="stateAlwaysHidden|adjustPan" />
+            android:windowSoftInputMode="stateAlwaysHidden|adjustPan"
+            android:screenOrientation="sensorPortrait"/>
     </application>
 
 </manifest>

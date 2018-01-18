@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.Z
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
 import android.widget.FrameLayout
@@ -69,16 +70,18 @@ class AnimationFragment @Inject constructor() : BaseFragment<AnimationContract.V
         val li = context?.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as? LayoutInflater
 
         val cardView = li?.inflate(R.layout.animation_piece, container, false)?.apply {
-            scaleX = 3.0f
-            scaleY = 3.0f
+//            scaleX = 3.0f
+//            scaleY = 3.0f
+            translationZ = 0.0f
         }
         container?.addView(cardView)
 
         cardView?.let {
             it
                     .animate()
-                    .scaleX(1.0f)
-                    .scaleY(1.0f)
+//                    .scaleX(1.0f)
+//                    .scaleY(1.0f)
+                    .translationZ(0.0f)
                     .setDuration(1000)
                     .setInterpolator(AnimationUtils.loadInterpolator(context, android.R.anim.bounce_interpolator))
 //                    .alpha(1.0f)

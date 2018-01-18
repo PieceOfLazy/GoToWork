@@ -1,5 +1,6 @@
 package piece.of.lazy.gotowork.firebase
 
+import android.net.Uri
 import com.google.firebase.auth.FirebaseUser
 import piece.of.lazy.gotowork.auth.LazyUser
 
@@ -8,8 +9,23 @@ import piece.of.lazy.gotowork.auth.LazyUser
  */
 class FbUser(private val user: FirebaseUser): LazyUser {
 
-    override fun getEmail(): String? = user.email
+    override val uuid: String
+        get() = user.uid
 
-    override fun getUid(): String = user.uid
+    override val email: String?
+        get() = user.email
 
+    override val emailVerified: Boolean
+        get() = user.isEmailVerified
+
+    override val phoneNumber: String?
+        get() = user.phoneNumber
+
+    override val displayName: String?
+        get() = user.displayName
+
+    override val photoURL: Uri?
+        get() = user.photoUrl
+
+    fun getUser(): FirebaseUser = user
 }

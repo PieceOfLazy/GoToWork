@@ -4,18 +4,21 @@
     <color name="colorPrimaryDark">#141921</color>
     <color name="colorAccent">#0080C6</color>
 
-    <color name="colorBg_10">#FFFFFF</color>
-    <color name="colorBg_11">#F2F2F2</color>
-    <color name="colorBg_20">#000000</color>
-    <color name="colorBg_20_A_80">#CC000000</color>
-    <color name="colorBg_20_A_50">#7F000000</color>
-    <color name="colorBg_20_A_20">#33000000</color>
-    <color name="colorBg_20_A_10">#19000000</color>
+    <color name="color_10">#FAFBFC</color>
+    <color name="color_20">#F1F6FF</color>
+    <color name="color_30">#D9E7FF</color>
+    <color name="color_40">#A8C9FF</color>
+    <color name="color_50">#5B98FF</color>
+    <color name="color_60">#0060FF</color>
+    <color name="color_60_A_80">#CC0060FF</color>
+    <color name="color_60_A_50">#7F0060FF</color>
+    <color name="color_70">#0049C4</color>
+    <color name="color_80">#002C76</color>
+    <color name="color_90">#001436</color>
+    <color name="color_100">#141921</color>
+    <color name="color_100_A_80">#CC141921</color>
+    <color name="color_100_A_50">#7F141921</color>
+    <color name="color_100_A_20">#33141921</color>
+    <color name="color_100_A_10">#19141921</color>
 
-    <color name="colorTc_10">#141921</color>
-    <color name="colorTc_10_sub">#495B7A</color>
-    <color name="colorTc_20">#FAFBFC</color>
-    <color name="colorTc_20_sub">#C8D0DE</color>
-
-    <color name="colorPc_10">#0080C6</color>
 </resources>

@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         app:cardElevation="3dp"
-        app:cardBackgroundColor="@color/colorBg_20_A_10"
+        app:cardBackgroundColor="@color/color_100_A_10"
         app:cardCornerRadius="30dp"
         >
 
@@ -19,7 +19,7 @@
             android:layout_height="wrap_content"
             android:indeterminate="true"
             android:indeterminateTintMode="src_atop"
-            android:indeterminateTint="@color/colorBg_11"
+            android:indeterminateTint="@color/color_20"
             android:indeterminateDuration="1800"
             />
     </android.support.v7.widget.CardView>

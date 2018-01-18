@@ -11,7 +11,8 @@ interface SplashContract {
 
     interface ActivityListener : BaseActivityListener {
         fun onInjected()
-        fun onAnonymous()
+        fun onLoginAnonymous()
+        fun onLoginGoogle()
     }
 
     interface View : BaseView<Presenter> {

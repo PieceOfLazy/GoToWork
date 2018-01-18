@@ -1,11 +1,22 @@
 package piece.of.lazy.gotowork.auth
 
+import android.net.Uri
+
 /**
  * @author piece.of.lazy
  */
 interface LazyUser {
 
-    fun getEmail(): String?
+    val uuid: String
 
-    fun getUid(): String
+    val email: String?
+
+    val emailVerified: Boolean
+
+    val phoneNumber: String?
+
+    val displayName: String?
+
+    val photoURL: Uri?
+
 }

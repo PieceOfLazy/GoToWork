@@ -71,7 +71,10 @@ class SplashFragment @Inject constructor() : BaseFragment<SplashContract.View, S
         override fun onBindView(v: View) {
             with(v) {
                 splash_piece_animation_anonymous?.setOnClickListener {
-                    listener.onAnonymous()
+                    listener.onLoginAnonymous()
+                }
+                splash_piece_animation_login_google?.setOnClickListener {
+                    listener.onLoginGoogle()
                 }
             }
         }
