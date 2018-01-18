@@ -22,6 +22,10 @@
         <activity android:name=".app.animation.AnimationActivity"
             android:windowSoftInputMode="stateAlwaysHidden|adjustPan"
             android:screenOrientation="sensorPortrait"/>
+
+        <activity android:name=".app.main.MainActivity"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustPan"
+            android:screenOrientation="sensorPortrait"/>
     </application>
 
 </manifest>
