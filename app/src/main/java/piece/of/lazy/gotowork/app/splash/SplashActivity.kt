@@ -1,13 +1,13 @@
-package piece.of.lazy.gotowork.app
+package piece.of.lazy.gotowork.app.splash
 
 import android.content.Intent
 import android.content.res.Configuration
 import android.os.Bundle
 import piece.of.lazy.gotowork.R
 import piece.of.lazy.gotowork.app.animation.AnimationActivity
+import piece.of.lazy.gotowork.auth.LazyAuth
 import piece.of.lazy.gotowork.auth.LazyUser
 import piece.of.lazy.gotowork.base.BaseActivity
-import piece.of.lazy.gotowork.base.BaseApplication
 import piece.of.lazy.gotowork.firebase.FbAuth
 import piece.of.lazy.gotowork.firebase.OnFbAuthCompleteListener
 import javax.inject.Inject
@@ -18,7 +18,7 @@ import javax.inject.Inject
 class SplashActivity : BaseActivity<SplashFragment, SplashContract.Presenter>(), SplashContract.ActivityListener {
 
     @Inject
-    lateinit var auth: FbAuth
+    lateinit var auth: LazyAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -49,7 +49,7 @@ class SplashActivity : BaseActivity<SplashFragment, SplashContract.Presenter>(),
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
-        auth.signInActivityResult(this, requestCode, resultCode, data, object : OnFbAuthCompleteListener {
+        (auth as? FbAuth)?.signInActivityResult(this, requestCode, resultCode, data, object : OnFbAuthCompleteListener {
             override fun onStart() {
                 onLoadingStart()
             }
@@ -68,22 +68,15 @@ class SplashActivity : BaseActivity<SplashFragment, SplashContract.Presenter>(),
         })
     }
 
-    override fun onInjected() {
-        log.i("onInjected "+this)
-    }
-
-//    override fun onAnonymous() {
-//        val intent = Intent(this, AnimationActivity::class.java)
-//        startActivity(intent)
-//    }
-
     override fun onLoginAnonymous() {
         val intent = Intent(this, AnimationActivity::class.java)
         startActivity(intent)
+
+        finish()
     }
 
     override fun onLoginGoogle() {
-        auth.signInWithGoogle(this)
+        (auth as? FbAuth)?.signInWithGoogle(this)
     }
 
 }

@@ -5,9 +5,9 @@ package piece.of.lazy.gotowork.common
  */
 interface SharedPreferences {
     companion object {
-        val KEY_NAME = "piece.of.lazy.gotowork.pref"
+        const val KEY_NAME = "piece.of.lazy.gotowork.pref"
 
-        val KEY_AUTH_UUID = "KEY_AUTH_UUID"
+        const val KEY_AUTH_UUID = "KEY_AUTH_UUID"
     }
 
     fun getValue(key: String, defValue: Boolean): Boolean

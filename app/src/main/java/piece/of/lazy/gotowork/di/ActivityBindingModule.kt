@@ -2,8 +2,8 @@ package piece.of.lazy.gotowork.di
 
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
-import piece.of.lazy.gotowork.app.SplashActivity
-import piece.of.lazy.gotowork.app.SplashModule
+import piece.of.lazy.gotowork.app.splash.SplashActivity
+import piece.of.lazy.gotowork.app.splash.SplashModule
 import piece.of.lazy.gotowork.app.animation.AnimationActivity
 import piece.of.lazy.gotowork.app.animation.AnimationModule
 

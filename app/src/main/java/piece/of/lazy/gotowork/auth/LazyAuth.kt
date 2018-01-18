@@ -6,4 +6,6 @@ package piece.of.lazy.gotowork.auth
 interface LazyAuth {
 
     fun currentUser(): LazyUser?
+
+
 }

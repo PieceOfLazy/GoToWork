@@ -1,24 +1,15 @@
 package piece.of.lazy.gotowork.app.animation
 
-import android.animation.Animator
-import android.animation.AnimatorListenerAdapter
 import android.content.Context
 import android.os.Bundle
-import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
-import android.view.View.Z
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
-import android.widget.FrameLayout
 import android.widget.ImageView
-import kotlinx.android.synthetic.main.splash_fragment.view.*
-import kotlinx.android.synthetic.main.splash_piece_animation.view.*
 import piece.of.lazy.gotowork.R
-import piece.of.lazy.gotowork.app.SplashFragment
 import piece.of.lazy.gotowork.base.BaseFragment
 import piece.of.lazy.gotowork.di.ActivityScoped
-import piece.of.lazy.ui.PieceOfView
 import javax.inject.Inject
 
 /**

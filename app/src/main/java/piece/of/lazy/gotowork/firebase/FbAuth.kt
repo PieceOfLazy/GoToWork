@@ -28,7 +28,6 @@ class FbAuth @Inject constructor() : LazyAuth {
     private var googleApiClient: GoogleSignInClient? = null
 
     override fun currentUser(): LazyUser? {
-
         auth.currentUser?.let {
             return FbUser(it)
         }
@@ -55,6 +54,7 @@ class FbAuth @Inject constructor() : LazyAuth {
     }
 
     fun signInWithGoogle(activity: Activity) {
+        Log.i("FbAuth", "1 signInWithGoogle ${auth.currentUser?.uid}")
         if(googleApiClient == null) {
             val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                     .requestIdToken(activity.getString(R.string.default_web_client_id))
@@ -63,6 +63,7 @@ class FbAuth @Inject constructor() : LazyAuth {
             googleApiClient = GoogleSignIn.getClient(activity, gso)
         }
 
+        Log.i("FbAuth", "2 signInWithGoogle ${auth.currentUser?.uid}")
         activity.startActivityForResult(googleApiClient?.signInIntent,
                 ActivityRequestCode.AUTH_GOOGLE_SIGN_IN.ordinal)
     }
