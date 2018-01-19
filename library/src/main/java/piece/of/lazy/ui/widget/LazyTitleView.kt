@@ -18,7 +18,7 @@ import piece.of.lazy.ui.R
 /**
  * @author piece.of.lazy
  */
-class LazyCardImageTextView : CardView {
+class LazyTitleView : CardView {
 
     constructor(context: Context?) : this(context, null)
 
