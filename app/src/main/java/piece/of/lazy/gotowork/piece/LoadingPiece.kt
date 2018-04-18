@@ -10,7 +10,7 @@ import piece.of.lazy.ui.PieceOfView
 /**
  * @author piece.of.lazy
  */
-class LoadingPiece : PieceOfView<Unit>(){
+class LoadingPiece : PieceOfView<Unit>() {
 
     private var loading = false
 
